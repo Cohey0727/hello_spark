@@ -12,7 +12,7 @@ mappedInput = rdd.map(extractCustomerPricePairs)
 totalByCustomer = mappedInput.reduceByKey(lambda x, y: x + y)
 
 flipped = totalByCustomer.map(lambda x: (x[1], x[0]))
-totalByCustomerSorted = flipped.sortByKey()
+totalByCustomerSorted = flipped.sortByKey(ascending=False)
 
 results = totalByCustomerSorted.collect()
 for result in results:
