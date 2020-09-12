@@ -10,8 +10,8 @@ people.createOrReplaceTempView('customers')
 # people.printSchema()
 
 customers = spark.sql("SELECT * FROM customers")
-# for customer in customers.collect():
-  # print(customers.first_name)
+for customer in customers.collect():
+    print(customers.first_name)
 
 # print("Let's display the name column:")
 # people.select("name").show()
