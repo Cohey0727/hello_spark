@@ -14,4 +14,3 @@ schema = StructType( [
 fakefriendsDF = spark.read.schema(schema).option("delimiter", "\t").csv('./dataset/ml-100k/u.data')
 fakefriendsDF.createOrReplaceTempView("movie")
 spark.sql("select * from movie").show()
-
